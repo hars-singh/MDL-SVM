@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdl-svm"
+version = "0.1.0"
+description = "Notebook-derived linear SVM selection using minimum description length"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Harsh Singh"}]
+dependencies = ["numpy>=1.23", "scikit-learn>=1.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+mdl-svm = "mdl_svm:main"
+
+[tool.setuptools]
+py-modules = ["mdl_svm"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
